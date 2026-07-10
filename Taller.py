@@ -33,3 +33,28 @@ mi_taller.agregar_automovil(auto1)
 mi_taller.agregar_automovil(auto2)
 
 mi_taller.listar_automoviles()
+
+mi_taller = Taller("AutoFix", "Managua", "8888-1234")
+
+while True:
+    print("--- Taller AutoFix ---")
+    print("1. Agregar Automóvil")
+    print("2. Ver todos los Automóviles")
+    print("3. Salir")
+    
+    opcion = input("Elige una opción: ")
+    
+    if opcion == "1":
+        marca = input("Ingresa la marca del automovil: ")
+        modelo = input("Ingrese el modelo del automovil: ")
+        color = input("Ingrese el color del automovil: ")
+        placa = input("Ingrese la placa del automovil: ")
+        nombre_del_cliente = input("Ingrese el nombre del cliente: ")
+        problema_tecnico = input("Ingrese el problema tecnico: ")
+        nuevo_automovil = Automovil(marca, modelo, color, placa, nombre_del_cliente, problema_tecnico)
+        mi_taller.agregar_automovil(nuevo_automovil)
+    elif opcion == "2":
+        mi_taller.listar_automoviles()
+    elif opcion == "3":
+        print("Saliendo del sistema...")
+        break
